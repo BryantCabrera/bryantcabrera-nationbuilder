@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import './Settings.css';
 
 class Settings extends Component {
@@ -35,4 +35,4 @@ class Settings extends Component {
     }
 }
 
-export default Settings;
+export default withRouter(Settings);

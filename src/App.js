@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import Settings from './components/Settings/Settings';
 
@@ -15,4 +16,4 @@ function App() {
     );
 }
 
-export default App;
+export default withRouter(App);
