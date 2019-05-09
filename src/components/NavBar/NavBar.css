@@ -7,14 +7,21 @@
     top: 0;
     left: 0;
     height: 101rem;
-    width: 25.3rem;
+    width: 10.7rem;
     background-color: #000;
+}
+
+.navbar:hover {
+    justify-content: flex-start;
+    align-items: center;
+    width: 25.3rem;
 }
 
 .navbar__logo {
     height: 4.6rem;
     width: 18.1rem;
     margin: 2rem 0;
+    margin-left: 1.5rem;
 }
 
 .navbar__list {
@@ -23,6 +30,11 @@
     height: 27.2rem;
     width: 17.1rem;
     list-style: none;
+    margin-left: 3rem;
+}
+
+.navbar__list:hover {
+    margin-left: none;
 }
 
 .navbar__list__item {
