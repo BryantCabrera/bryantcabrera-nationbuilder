@@ -11,7 +11,6 @@ class NavBar extends Component {
     }
 
     expand = () => {
-        console.log('expanding');
         this.setState({
             logoContractedDisplay: "none",
             logoExpandedDisplay: "",
@@ -20,8 +19,6 @@ class NavBar extends Component {
     }
 
     contract = () => {
-        console.log('contracting');
-
         this.setState({
             logoContractedDisplay: "",
             logoExpandedDisplay: "none",
@@ -130,7 +127,7 @@ class NavBar extends Component {
                         </RouterLink>
                     </li>
                     <li className="navbar__list__item">
-                        <RouterLink exact to="#settings" title="Settings" className="navbar__list__item__link">
+                        <RouterLink exact to="/settings" title="Settings" className="navbar__list__item__link">
                             <img
                                 className="navbar__list__item__icon"
                                 src="/imgs/nav/settings-icon.png"

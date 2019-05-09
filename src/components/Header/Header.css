@@ -3,3 +3,40 @@
     width: 109.3rem;
     background-color: #FFFFFF;
 }
+
+.header__info {
+    display: flex;
+    justify-content: space-between;
+    margin: 3.5rem;
+}
+
+.header__info__title {
+    height: 4.2rem;
+    width: 12.1rem;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.header__info__input {
+    height: 4rem;
+    width: 31.1rem;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: space-evenly;
+    height: 3.6rem;
+    width: 91.1rem;
+    margin-left: 3.5rem;
+}
+
+.header__nav__link:link,
+.header__nav__link:visited {
+    color: #000000;
+    font-weight: bold;
+}
+
+.header__nav__link:active,
+.header__nav__link:hover {
+    color: #1498BE;
+}

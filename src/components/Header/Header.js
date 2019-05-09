@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink as RouterLink, withRouter } from 'react-router-dom';
+import { Input, InputGroup, InputGroupAddon, InputGroupText } from 'reactstrap';
 import './Header.css';
 
 class Header extends Component {
@@ -11,20 +12,31 @@ class Header extends Component {
     render() {
         return (
             <div className="header">
-                {this.props.title}
+                <div className="header__info">
+                    <h1 className="header__info__title">{this.props.title}</h1>
 
-                <ul>
-                    {this.props.content.map(link => (
-                        <li>
-                            <RouterLink exact to={link.path} title={link.title} className="navbar__list__item__link">
-                                {link.title}
-                            </RouterLink>
-                        </li>
+                    <InputGroup className="header__info__input">
+                        <InputGroupAddon addonType="prepend" style={{backgroundColor: "transparent"}}>
+                            <InputGroupText>To the Left!</InputGroupText>
+                        </InputGroupAddon>
+                        <Input  />
+                    </InputGroup>
+                </div>
+                <div className="header__nav">
+                    {this.props.content.map((link, index) => (
+                        <RouterLink
+                            exact to={link.path}
+                            title={link.title}
+                            className="header__nav__link"
+                            key={index}
+                        >
+                            {link.title}
+                        </RouterLink>
                     ))}
-                </ul>
+                </div>
             </div>
         )
     }
 }
 
-export default Header;
+export default withRouter(Header);

@@ -33,7 +33,7 @@ class Settings extends Component {
                 path: "/settings/domains"
             },
             {
-                title: "Payment Processors",
+                title: "Payment processors",
                 path: "/settings/payment"
             },
             {
@@ -58,9 +58,10 @@ class Settings extends Component {
             <div className="settings">
                 <Header title="Settings" content={headerInfo} />
                 This is settings.
-                <Switch>
-                    <Route exact path="/settings/defaults" component={() => <Defaults />} />
-                </Switch>
+                <Defaults />
+                {/* <Switch>
+                    <Route exact path="/defaults" component={() => <Defaults />} />
+                </Switch> */}
             </div>
         )
     }
