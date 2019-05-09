@@ -1,6 +1,10 @@
 .header {
+    position: absolute;
+    top: 0;
+    right: 0;
     height: 14.7rem;
-    width: 109.3rem;
+    /* width: 109.3rem; */
+    width: calc(100vw - 10.7rem);
     background-color: #FFFFFF;
 }
 
@@ -8,6 +12,7 @@
     display: flex;
     justify-content: space-between;
     margin: 3.5rem;
+    margin-bottom: 0;
 }
 
 .header__info__title {
@@ -25,18 +30,34 @@
 .header__nav {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     height: 3.6rem;
     width: 91.1rem;
+    margin-top: 3rem;
     margin-left: 3.5rem;
+    font-size: 1.4rem;
 }
 
 .header__nav__link:link,
 .header__nav__link:visited {
     color: #000000;
     font-weight: bold;
+    padding-bottom: 1rem;
 }
 
 .header__nav__link:active,
 .header__nav__link:hover {
     color: #1498BE;
+    text-decoration: none;
 }
+
+.header__nav__link:after {
+  display:block;
+  content: '';
+  padding-top: 2rem;
+  border-bottom: solid 3px #1498BE;
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+}
+
+.header__nav__link:hover:after { transform: scaleX(1); }
