@@ -1,4 +1,45 @@
-.nav__logo {
-    height: 46;
-    width: 181;
+.navbar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    top: 0;
+    left: 0;
+    height: 101rem;
+    width: 25.3rem;
+    background-color: #000;
+}
+
+.navbar__logo {
+    height: 4.6rem;
+    width: 18.1rem;
+    margin: 2rem 0;
+}
+
+.navbar__list {
+    display: flex;
+    align-items: flex-start;
+    height: 27.2rem;
+    width: 17.1rem;
+    list-style: none;
+}
+
+.navbar__list__item {
+    margin: 1rem 0;
+}
+
+.navbar__list__item__icon {
+    margin-right: .7rem;
+}
+
+.navbar__list__item__link:link,
+.navbar__list__item__link:visited {
+    color: #B5B5B5;
+}
+
+.navbar__list__item__link:hover,
+.navbar__list__item__link:active {
+    color: #fff;
+    text-decoration: none;
 }

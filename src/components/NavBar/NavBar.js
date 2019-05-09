@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink, withRouter } from 'react-router-dom';
+import { NavLink as RouterLink, withRouter } from 'react-router-dom';
 import { Nav, NavItem } from 'reactstrap';
 import './NavBar.css';
 
@@ -35,20 +35,81 @@ class NavBar extends Component {
 
         return (
             <div className="navbar">
-                {/* <div className="navbar__logo">
-                    <NavLink exact to="/" title="Landing Page">
-                        <img className="navbar__logo__img" src="/imgs/logo.png" alt="NationBuilder Logo" title="NationBuilder Logo"></img>
-                    </NavLink>
-                </div> */}
-                {/* <nav className="navbar__nav--linear">
-                    <NavLink exact to="#dashboard" title="Dashboard">Dashboard</NavLink>
-                    <NavLink exact to="#people" title="People Page">People</NavLink>
-                    <NavLink exact to="#website" title="Website Page">Website</NavLink>
-                    <NavLink exact to="#communication" title="Communication Page">Communication</NavLink>
-                    <NavLink exact to="#finances" title="Finances Page">Finances</NavLink>
-                    <NavLink exact to="#nations" title="Nations Page">Nations</NavLink>
-                    <NavLink exact to="#settings" title="Settings">Settings</NavLink>
-                </nav> */}
+                <div className="navbar__logo">
+                    <RouterLink exact to="/" title="Landing Page">
+                        <img
+                            className="navbar__logo__img"
+                            src="/imgs/nav/nationbuilder-horizontal-black.png"
+                            alt="NationBuilder Logo"
+                            title="NationBuilder Logo">
+                        </img>
+                    </RouterLink>
+                </div>
+                <ul className="navbar__list nav-stacked flex-column">
+                    <li className="navbar__list__item">
+                        <img
+                            className="navbar__list__item__icon"
+                            src="/imgs/nav/dashboard-icon.png"
+                            alt="Dashboard Icon"
+                            title="Dashboard Icon">
+                        </img>
+                        <RouterLink exact to="#dashboard" title="Dashboard" className="navbar__list__item__link">Dashboard</RouterLink>
+                    </li>
+                    <li className="navbar__list__item">
+                        <img
+                            className="navbar__list__item__icon"
+                            src="/imgs/nav/people-icon.png"
+                            alt="People Icon"
+                            title="People Icon">
+                        </img>
+                        <RouterLink exact to="#people" title="People Page" className="navbar__list__item__link">People</RouterLink>
+                    </li>
+                    <li className="navbar__list__item">
+                        <img
+                            className="navbar__list__item__icon"
+                            src="/imgs/nav/website-icon.png"
+                            alt="Website Icon"
+                            title="Website Icon">
+                        </img>
+                        <RouterLink exact to="#website" title="Website Page" className="navbar__list__item__link">Website</RouterLink>
+                    </li>
+                    <li className="navbar__list__item">
+                        <img
+                            className="navbar__list__item__icon"
+                            src="/imgs/nav/communication-icon.png"
+                            alt="Communication Icon"
+                            title="Communication Icon">
+                        </img>
+                        <RouterLink exact to="#communication" title="Communication Page" className="navbar__list__item__link">Communication</RouterLink>
+                    </li>
+                    <li className="navbar__list__item">
+                        <img
+                            className="navbar__list__item__icon"
+                            src="/imgs/nav/finances-icon.png"
+                            alt="Finances Icon"
+                            title="Finances Icon">
+                        </img>
+                        <RouterLink exact to="#finances" title="Finances Page" className="navbar__list__item__link">Finances</RouterLink>
+                    </li>
+                    <li className="navbar__list__item">
+                    <img
+                            className="navbar__list__item__icon"
+                            src="/imgs/nav/nations-icon.png"
+                            alt="Nations Icon"
+                            title="Nations Icon">
+                        </img>
+                        <RouterLink exact to="#nations" title="Nations Page" className="navbar__list__item__link">Nations</RouterLink>
+                    </li>
+                    <li className="navbar__list__item">
+                    <img
+                            className="navbar__list__item__icon"
+                            src="/imgs/nav/settings-icon.png"
+                            alt="Settings Icon"
+                            title="Settings Icon">
+                        </img>
+                        <RouterLink exact to="#settings" title="Settings" className="navbar__list__item__link">Settings</RouterLink>
+                    </li>
+                </ul>
                 {/* <ul className="nav flex-column">
                     <li className="nav-item">
                         <NavLink exact to="#dashboard" title="Dashboard">Dashboard</NavLink>
@@ -71,7 +132,7 @@ class NavBar extends Component {
                     <li className="nav-item">
                         <NavLink exact to="#settings" title="Settings">Settings</NavLink>
                     </li>
-                </ul> */}
+                </ul>
                 <Nav vertical className="nav" style={{ height: 1010, width: 253, backgroundColor: "#000" }}>
                     <img src="/imgs/nationbuilder-horizontal-black.png" className="nav__logo img-responsive" alt="NationBuilder Logo" title=" NationBuilder Logo"></img>
                     <NavItem>
@@ -95,7 +156,7 @@ class NavBar extends Component {
                     <NavItem>
                         <NavLink exact to="#settings" title="Settings">Settings</NavLink>
                     </NavItem>
-                </Nav>
+                </Nav> */}
             </div>
         )
     }
