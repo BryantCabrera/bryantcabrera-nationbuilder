@@ -9,6 +9,7 @@
     height: 101rem;
     width: 10.7rem;
     background-color: #000;
+    z-index: 2;
 }
 
 .navbar:hover {
