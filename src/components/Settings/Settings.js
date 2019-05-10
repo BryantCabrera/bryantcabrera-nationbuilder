@@ -135,11 +135,6 @@ class Settings extends Component {
                         <People />
                     </div>
                 </div>
-
-                
-                {/* <Switch>
-                    <Route exact path="/defaults" component={() => <Defaults />} />
-                </Switch> */}
             </div>
         )
     }
