@@ -50,18 +50,13 @@ This is a coding project for NationBuilder built by Bryant Cabrera.
     2. On the right hand side, click "download"
     3. In terminal, $cd into the project folder
     4. $npm install
-2. Creating local copy of Back-End repo
-    1. Go to the remote repo's link at [https://github.com/BryantCabrera/bryantcabrera-nationbuilder-backend](https://github.com/BryantCabrera/bryantcabrera-nationbuilder-backend)
-    2. On the right hand side, click "download"
-    3. In terminal, $cd into the project folder
-    4. $npm install
-3. Start Local Repo
+2. Start Local Repo
     1. On your computer, $cd to bryantcabrera-nationbuilder-backend
     2. $nodemon server.js
     3. On your computer, $cd to bryantcabrera-nationbuilder
     4. $npm start
     5. on your client, browse to localhost:3000
-5. Commiting & pushing changes
+3. Commiting & pushing changes
     1. Please refer to the **GitHub workflow** in part F of this README.md.
 
 ## F. Github workflow
