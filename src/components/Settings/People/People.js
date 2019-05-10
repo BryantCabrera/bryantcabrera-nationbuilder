@@ -47,7 +47,28 @@ class People extends Component {
 
     handleSubmit = (data) => {
         this.setState({
-            customFields: [...data]
+            customFields: [...this.state.customFields, data]
+        });
+
+        this.reset()
+    }
+
+    reset = () => {
+        this.setState({
+            ...this.state,
+            name: {
+                value: '',
+                isValid: false
+            },
+            slug: {
+                value: '',
+                isValid: false
+            },
+            fieldType: {
+                value: '',
+                isValid: false
+            },
+            selectedOption: null
         });
     }
 
@@ -105,7 +126,8 @@ class People extends Component {
                 'Name',
                 'Slug', 
                 'Type'
-            ]
+            ],
+            data: this.state.customFields
         }
 
         return (
@@ -119,6 +141,7 @@ class People extends Component {
                         <Label for="name" className="people__form__label">Name*</Label>
                         <Input
                             type="text"
+                            value={this.state.name.value}
                             name="name"
                             id="name"
                             className="people__form__input"
@@ -130,6 +153,7 @@ class People extends Component {
                         <div className="people__form__input--slug">
                             <Input
                                 type="text"
+                                value={this.state.slug.value}
                                 name="slug"
                                 id="slug"
                                 className="people__form__input"

@@ -18,19 +18,13 @@ class UITable extends Component {
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        {this.props.tableData.data.map((data, index) => <td key={index}>{data.name}</td>)}
                     </tr>
                     <tr>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
+                        {this.props.tableData.data.map((data, index) => <td key={index}>{data.slug}</td>)}
                     </tr>
                     <tr>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
+                        {this.props.tableData.data.map((data, index) => <td key={index}>{data.type}</td>)}
                     </tr>
                 </tbody>
             </Table>
