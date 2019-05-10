@@ -11,6 +11,28 @@
     background-color: #FBFDFE;
 }
 
+.table__body__row__edit {
+    width: 3rem;
+    font-size: 11;
+    font-weight: bold;
+    color: #1498BE;
+    cursor: pointer;
+}
+
+.table__body__row__name {
+    width: 40rem;
+}
+
+.table__body__row__slug {
+    width: 40rem;
+}
+
+.table__body__row__field-type {
+    width: 10rem;
+}
+
+/***** Dropdown Menu *****/
+
 .css-1pcexqc-container {
     width: 1.5rem;
 }
@@ -22,4 +44,8 @@
 .table__body-container,
 .table__body__control {
     width: 17rem;
+}
+
+.table__body__row__dropdown {
+    width: 1.5rem;
 }

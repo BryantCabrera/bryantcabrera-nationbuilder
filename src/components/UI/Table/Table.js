@@ -72,11 +72,11 @@ class UITable extends Component {
                 <tbody className="table__body">
                     {this.props.tableData.data.map((data, index) => (
                         <tr className="table__body__row" key={index}>
-                            <td>Edit</td>
-                            <td>{data.name}</td>
-                            <td>{data.slug}</td>
-                            <td>{data.fieldType}</td>
-                            <td>
+                            <td className="table__body__row__edit">Edit</td>
+                            <td className="table__body__row__name">{data.name}</td>
+                            <td className="table__body__row__slug">{data.slug}</td>
+                            <td lassName="table__body__row__field-type">{data.fieldType}</td>
+                            <td className="table__body__row__dropdown">
                                 <Select
                                     placeholder="Select option"
                                     value='delete'
