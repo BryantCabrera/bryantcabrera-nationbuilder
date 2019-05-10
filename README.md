@@ -37,7 +37,6 @@ This is a coding project for NationBuilder built by Bryant Cabrera.
 > Authentication
     1. bcrypt
     
-
 > Planning/Organization/Design
     
     1. Figma
@@ -113,3 +112,5 @@ This is a coding project for NationBuilder built by Bryant Cabrera.
     2.	**DO NOT** hit “merge”, Bryant will be handling this.
 
 ## G. Next Steps
+- [ ] Connect to backend server & database
+- [ ] Build out routes with semantic paths

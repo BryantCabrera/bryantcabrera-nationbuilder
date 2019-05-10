@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Switch, Route, Link, NavLink as RouterLink, withRouter } from 'react-router-dom';
-import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
+import { NavLink as RouterLink, withRouter } from 'react-router-dom';
+import { Nav, NavItem, NavLink } from 'reactstrap';
 import Header from '../Header/Header';
 import People from './People/People';
 import './Settings.css';

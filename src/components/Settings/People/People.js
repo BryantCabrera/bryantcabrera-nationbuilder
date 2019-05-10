@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Switch, Route, NavLink, withRouter } from 'react-router-dom';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import Select from 'react-select';
 import UITable from '../../UI/Table/Table';
@@ -110,9 +109,9 @@ class People extends Component {
 
     render() {
         const options = [
-            { value: 'text', label: 'Text' },
-            { value: 'checkbox', label: 'Checkbox' },
-            { value: 'multipleChoice', label: 'Multiple choice' }
+            { value: 'Text', label: 'Text' },
+            { value: 'Checkbox', label: 'Checkbox' },
+            { value: 'Multiple Choice', label: 'Multiple choice' }
         ];
 
         const { selectedOption } = this.state;
