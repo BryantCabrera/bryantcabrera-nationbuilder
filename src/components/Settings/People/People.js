@@ -43,7 +43,9 @@ class People extends Component {
         });
     }
 
-    handleSubmit = () => {
+    handleSubmit = (e) => {
+        e.preventDefault();
+
         const newData = {
             name: this.state.name.value,
             slug: this.state.slug.value,
@@ -55,6 +57,28 @@ class People extends Component {
         });
 
         this.reset()
+    }
+
+    handleEdit = (index, customField) => {
+        // Populates forms with old information
+        this.setState(prevState => {
+            return {
+                ...prevState,
+                name: {
+                    value: customField.name,
+                    isValid: true
+                },
+                slug: {
+                    value: customField.slug,
+                    isValid: true
+                },
+                fieldType: {
+                    value: customField.fieldType,
+                    isValid: true
+                },
+                selectedOption: customField.fieldType
+            }
+        });
     }
 
     handleDelete = (index) => {
@@ -175,22 +199,10 @@ class People extends Component {
                             <h4 className="people__form__input--slug__warning">Choose carefully, for data integrity reasons, this cannot be changed later.</h4>
                         </div>
                     </FormGroup>
-                    {/* <FormGroup className="people__form__selectGroup">
-                        <Label for="fieldType" className="people__form__label">Field type*</Label>
-                        <Input
-                            type="select"
-                            name="fieldType"
-                            id="fieldType"
-                            className="people__form__input--select"
-                        >
-                            <option disabled selected hidden className="people__form__input--select__option">Select option</option>
-                            <option className="people__form__input--select__option">Text</option>
-                            <option className="people__form__input--select__option">Checkbox</option>
-                            <option className="people__form__input--select__option">Multiple choice</option>
-                        </Input>
-                    </FormGroup> */}
+                    
                     <Label for="fieldType" className="people__form__label">Field type*</Label>
                     <Select
+                        defaultInputValue={this.state.selectedOption ? this.state.selectedOption : ''}
                         placeholder="Select option"
                         value={selectedOption}
                         label='Field type*'
@@ -209,7 +221,11 @@ class People extends Component {
                     >Create field</Button>
                 </Form>
 
-                <UITable tableData={tableData} handleDelete={this.handleDelete} />
+                <UITable
+                    tableData={tableData}
+                    handleEdit={this.handleEdit}
+                    handleDelete={this.handleDelete}
+                />
             </div>
         )
     }

@@ -15,12 +15,26 @@ class Header extends Component {
                 <div className="header__info">
                     <h1 className="header__info__title">{this.props.title}</h1>
 
-                    <InputGroup className="header__info__input">
-                        <InputGroupAddon addonType="prepend" style={{backgroundColor: "transparent"}}>
-                            <InputGroupText>To the Left!</InputGroupText>
-                        </InputGroupAddon>
-                        <Input  />
-                    </InputGroup>
+                    <div className="header__info__container">
+                        <InputGroup className="header__info__input">
+                            <InputGroupAddon
+                                addonType="prepend"
+                                className="header__info__input__icon"
+                            >
+                                <InputGroupText>
+                                    <div className="s-circle"></div>
+                                </InputGroupText>
+                            </InputGroupAddon>
+                            <Input className="header__info__input__input" placeholder="Search people" />
+                        </InputGroup>
+
+                        <img
+                            className="header__info__avatar"
+                            src="/imgs/header/avatar.png"
+                            alt="Avatar"
+                            title="Avatar">
+                        </img>
+                    </div>
                 </div>
                 <div className="header__nav">
                     {this.props.content.map((link, index) => (
