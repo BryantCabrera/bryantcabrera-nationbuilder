@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route, Link, NavLink as RouterLink, withRouter } from 'react-router-dom';
 import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
 import Header from '../Header/Header';
-import Defaults from './Defaults/Defaults';
+import People from './People/People';
 import './Settings.css';
 
 class Settings extends Component {
@@ -130,25 +130,9 @@ class Settings extends Component {
                                         }}
                                     >{link.title}</RouterLink>
                                 ))}
-                            {/* <Link
-                                to="#"
-                                title="People"
-                                className="settings__body__content__links__link"
-                                active
-                            >
-                                People
-                            </Link>
-                            <Link
-                                to="#"
-                                title="Donations"
-                                className="settings__body__content__links__link"
-                                active
-                            >
-                                Donations
-                            </Link> */}
                         </Nav>
 
-                        <Defaults />
+                        <People />
                     </div>
                 </div>
 

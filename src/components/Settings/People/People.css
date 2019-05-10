@@ -1,0 +1,85 @@
+.people {
+    padding: 4rem;
+}
+
+.people__title {
+    font-size: 2.1rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.people__description {
+    font-size: 1.5rem;
+}
+
+.people__form {
+    margin-top: 4rem;
+}
+
+.people__form__label {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: medium;
+}
+
+.people__form__input {
+    height: 4.3rem;
+    width: 52rem;
+    font-size: 1.5rem;
+    background-color: #F8F9F9;
+    border: 1px solid #E7E7E7;
+}
+
+.people__form__input--slug {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.people__form__input--slug__warning {
+    padding-left: 2rem;
+    font-size: 1.3rem;
+    color: #858585;
+}
+
+/***** Select Dropdown *****/
+/* .people__form__selectGroup {
+    position: relative;
+    width: 17rem;
+}
+
+.people__form__input--select {
+    height: 4.3rem;
+    width: 17rem;
+    font-size: 1.5rem;
+    color: #999999;
+    background-color: #FFFFFF;
+    border: 1px solid #E7E7E7;
+}
+
+.people__form__input--select-items {
+    font-size: 1.4rem;
+    color: #000000;
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+.people__form__input--select-selected {
+    color: #FFFFFF;
+    background-color: #1498BE;
+    cursor: pointer;
+} */
+
+.people__select-container,
+.people__select__control {
+    width: 17rem;
+}
+
+.people__select__indicator-separator {
+    color: transparent;
+}
+
+.people__select__menu,
+.people__select__menu-list,
+.people__select__option {
+    width: 20.7rem;
+}

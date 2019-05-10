@@ -62,7 +62,7 @@
 
 .header__nav__link:hover::after { transform: scaleX(1); }
 
-.header__nav__link:active::after {
+.header__nav__link:focus::after {
     display: block;
     content: '';
     padding-top: 2rem;
