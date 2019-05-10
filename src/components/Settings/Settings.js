@@ -7,7 +7,7 @@ import './Settings.css';
 
 class Settings extends Component {
     state = {
-        // because the body links are dynamic, I chose to put this array in state
+        // Because the body links are dynamic, I chose to put this array in state
         links: [
             {
                 title: "People",
