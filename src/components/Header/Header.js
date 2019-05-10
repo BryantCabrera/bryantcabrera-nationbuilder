@@ -5,8 +5,9 @@ import './Header.css';
 
 class Header extends Component {
     state = {
-        navLinearDisplay: 'flex',
-        navHamburgerDisplay: 'none'
+        user: {
+            avatar: '/imgs/header/avatar.png'
+        }
     }
 
     render() {
@@ -30,7 +31,7 @@ class Header extends Component {
 
                         <img
                             className="header__info__avatar"
-                            src="/imgs/header/avatar.png"
+                            src={this.state.user.avatar}
                             alt="Avatar"
                             title="Avatar">
                         </img>
