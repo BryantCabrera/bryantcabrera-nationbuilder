@@ -1,37 +1,93 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap';
+import Select from 'react-select';
 import './Table.css';
 
 class UITable extends Component {
-    state = {
+    handleChange = (index) => {
+        this.props.handleDelete(index)
     }
 
     render() {
-        
+        const options = [
+            { value: 'delete', label: 'Delete' }
+        ];
+
+        const customStyles = {
+            option: (provided, { data, isDisabled, isFocused, isSelected }) => ({
+                border: null,
+                color: isDisabled
+                    ? '#ccc'
+                    : isSelected
+                        ? '#FFFFFF'
+                        : isFocused
+                            ? '#FFFFFF'
+                            : '#000000',
+                backgroundColor: isDisabled
+                    ? null
+                    : isSelected
+                        ? '#1498BE'
+                        : isFocused
+                            ? '#1498BE'
+                            : '#FFFFFF',
+                padding: 10,
+                width: '20.9rem',
+                cursor: 'pointer'
+            }),
+            valueContainer: () => ({
+                display: 'none'
+            }),
+            control: () => ({
+                width: '1.5rem'
+            }),
+            menu: () => ({
+                width: '20.9rem'
+            }),
+            input: styles => ({
+                ...styles,
+                width: '17rem',
+                border: null
+            }),
+            placeholder: styles => ({
+                ...styles,
+                color: '#999999'
+            }),
+            singleValue: (provided, state) => {
+                const opacity = state.isDisabled ? 0.5 : 1;
+                const transition = 'opacity 300ms';
+
+                return { ...provided, opacity, transition };
+            }
+        }
 
         return (
             <Table className="table">
-                <thead>
+                <thead className="table__header">
                     <tr>
-                        {this.props.tableData.headers.map((header, index) => <th key={index}>{header}</th> )}
+                        <th></th>
+                        {this.props.tableData.headers.map((header, index) => <th key={index}>{header}</th>)}
+                        <th></th>
                     </tr>
                 </thead>
-                <tbody>
-                    {/* <tr>
-                        {this.props.tableData.data.map((data, index) => <td key={index}>{data.name}</td>)}
-                    </tr>
-                    <tr>
-                        {this.props.tableData.data.map((data, index) => <td key={index}>{data.slug}</td>)}
-                    </tr>
-                    <tr>
-                        {this.props.tableData.data.map((data, index) => <td key={index}>{data.type}</td>)}
-                    </tr> */}
-
+                <tbody className="table__body">
                     {this.props.tableData.data.map((data, index) => (
-                        <tr key={index}>
+                        <tr className="table__body__row" key={index}>
+                            <td>Edit</td>
                             <td>{data.name}</td>
                             <td>{data.slug}</td>
                             <td>{data.fieldType}</td>
+                            <td>
+                                <Select
+                                    placeholder="Select option"
+                                    value='delete'
+                                    label='Field type*'
+                                    onChange={() => this.handleChange(index)}
+                                    options={options}
+                                    styles={customStyles}
+                                    classNamePrefix="table__body"
+                                    id="fieldType"
+                                />
+                            </td>
                         </tr>
                     ))}
                 </tbody>

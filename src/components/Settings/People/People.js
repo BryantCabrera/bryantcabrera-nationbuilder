@@ -41,8 +41,6 @@ class People extends Component {
                 isValid: true
             }
         });
-
-        console.log(`Option selected:`, selectedOption);
     }
 
     handleSubmit = () => {
@@ -57,6 +55,12 @@ class People extends Component {
         });
 
         this.reset()
+    }
+
+    handleDelete = (index) => {
+        this.setState({
+            customFields: this.state.customFields.filter((customField, idx) => idx !== index)
+        });   
     }
 
     reset = () => {
@@ -107,7 +111,8 @@ class People extends Component {
                             ? '#1498BE'
                             : '#FFFFFF',
                 padding: 10,
-                width: '20.9rem'
+                width: '20.9rem',
+                cursor: 'pointer'
             }),
             menu: () => ({
                 width: '20.9rem'
@@ -204,7 +209,7 @@ class People extends Component {
                     >Create field</Button>
                 </Form>
 
-                <UITable tableData={tableData} />
+                <UITable tableData={tableData} handleDelete={this.handleDelete} />
             </div>
         )
     }

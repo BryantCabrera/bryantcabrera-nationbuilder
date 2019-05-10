@@ -1,0 +1,25 @@
+.table {
+    width: 100%;
+}
+
+.table__header {
+    font-size: 1.4rem;
+    color: #8F8F8F;
+}
+
+.table__body__row:hover {
+    background-color: #FBFDFE;
+}
+
+.css-1pcexqc-container {
+    width: 1.5rem;
+}
+
+.table__body__value-container {
+    display: none;
+}
+
+.table__body-container,
+.table__body__control {
+    width: 17rem;
+}
