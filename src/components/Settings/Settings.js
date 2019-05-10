@@ -77,10 +77,6 @@ class Settings extends Component {
             }
         ];
 
-        Nav.propTypes = {
-            marginTop: "14.7rem"
-        }
-
         return (
             <div className="settings">
                 <Header title="Settings" content={headerInfo} />
@@ -128,6 +124,7 @@ class Settings extends Component {
                                             fontWeight: "bold",
                                             color: "#1498BE"
                                         }}
+                                        key={index}
                                     >{link.title}</RouterLink>
                                 ))}
                         </Nav>
