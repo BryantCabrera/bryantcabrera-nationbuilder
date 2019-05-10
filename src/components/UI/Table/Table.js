@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { Table } from 'reactstrap';
 import './Table.css';
 
-class Table extends Component {
+class UITable extends Component {
     state = {
     }
 
@@ -9,11 +10,32 @@ class Table extends Component {
         
 
         return (
-            <div className="table">
-                
-            </div>
+            <Table className="table">
+                <thead>
+                    <tr>
+                        {this.props.tableData.headers.map((header, index) => <th key={index}>{header}</th> )}
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </Table>
         )
     }
 }
 
-export default Table;
+export default UITable;

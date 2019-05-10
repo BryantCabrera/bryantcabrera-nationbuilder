@@ -2,18 +2,33 @@ import React, { Component } from 'react';
 import { Switch, Route, NavLink, withRouter } from 'react-router-dom';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import Select from 'react-select';
+import UITable from '../../UI/Table/Table';
 import './People.css';
 
 class People extends Component {
     state = {
-        name: '',
-        slug: '',
-        fieldType: '',
-        selectedOption: null
+        name: {
+            value: '',
+            isValid: false
+        },
+        slug: {
+            value: '',
+            isValid: false
+        },
+        fieldType: {
+            value: '',
+            isValid: false
+        },
+        selectedOption: null,
+        customFields: []
     }
+
     handleInputChange = (e) => {
         this.setState({
-            [e.target.name]: e.target.value
+            [e.target.name]: {
+                value: e.target.value,
+                isValid: true
+            }
         });
     }
 
@@ -21,10 +36,19 @@ class People extends Component {
         this.setState({ selectedOption });
 
         this.setState({
-            fieldType: selectedOption.value
+            fieldType: {
+                value: selectedOption.value,
+                isValid: true
+            }
         });
 
         console.log(`Option selected:`, selectedOption);
+    }
+
+    handleSubmit = (data) => {
+        this.setState({
+            customFields: [...data]
+        });
     }
 
     render() {
@@ -74,6 +98,14 @@ class People extends Component {
 
                 return { ...provided, opacity, transition };
             }
+        }
+
+        const tableData = {
+            headers: [
+                'Name',
+                'Slug', 
+                'Type'
+            ]
         }
 
         return (
@@ -132,8 +164,21 @@ class People extends Component {
                         id="fieldType"
                     />
                    
-                    <Button className="people__form__button" color="info">Create field</Button>
+                    <Button
+                        className="people__form__button"
+                        color="info"
+                        onClick={() => this.handleSubmit(
+                            {
+                                name: this.state.name.value,
+                                slug: this.state.slug.value,
+                                fieldType: this.state.fieldType.value
+                            }
+                        )}
+                        disabled={!this.state.name.isValid || !this.state.slug.isValid || !this.state.fieldType.isValid}
+                    >Create field</Button>
                 </Form>
+
+                <UITable tableData={tableData} />
             </div>
         )
     }
