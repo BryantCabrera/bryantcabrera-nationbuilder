@@ -6,3 +6,62 @@
     width: calc(100vw - 10.7rem);
     background-color: #E8EAEB;
 }
+
+.settings__body {
+    height: calc(100vh - 14.7rem);
+    margin-top: 14.7rem;
+    padding: 4.5rem;
+}
+
+/***** Settings Nav *****/
+.settings__nav {
+    
+}
+
+.settings__nav__item__link:link,
+.settings__nav__item__link:visited {
+    color: #717171;
+}
+
+.settings__nav__item__link:hover,
+.settings__nav__item__link:active,
+.active {
+    color: #1498BE;
+}
+
+/***** Settings Content *****/
+.settings__body__content {
+    height: 100%;
+    width: 100%;
+    background-color: #FFFFFF;
+}
+
+.settings__body__content__links {
+    content: '';
+    border-bottom: solid 3px #F2F5F6;
+}
+
+.settings__body__content__links__link:link, 
+.settings__body__content__links__link:visited {
+    margin: 2rem;
+    margin-right: .2rem;
+    margin-bottom: 0;
+    color: #717171;
+}
+
+.settings__body__content__links__link:hover, 
+.settings__body__content__links__link:active {
+    color: #1498BE;
+    text-decoration: none;
+}
+
+.settings__body__content__links__link::after {
+    display: block;
+    content: '';
+    padding-top: 2rem;
+    border-bottom: solid 3px #1498BE;
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}
+
+.settings__body__content__links__link:hover::after { transform: scaleX(1); }

@@ -27,6 +27,11 @@ class Header extends Component {
                         <RouterLink
                             exact to={link.path}
                             title={link.title}
+                            activeClassName={link.status ? link.status : ""}
+                            activeStyle={{
+                                fontWeight: "bold",
+                                color: "#1498BE"
+                            }}
                             className="header__nav__link"
                             key={index}
                         >
