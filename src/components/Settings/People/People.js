@@ -118,7 +118,7 @@ class People extends Component {
                         id="fieldType"
                     />
                    
-                    <Button>Submit</Button>
+                    <Button className="people__form__button" color="info">Create field</Button>
                 </Form>
             </div>
         )

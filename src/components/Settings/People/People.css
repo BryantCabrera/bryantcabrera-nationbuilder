@@ -78,8 +78,11 @@
     color: transparent;
 }
 
-.people__select__menu,
-.people__select__menu-list,
-.people__select__option {
-    width: 20.7rem;
+.people__form__button {
+    height: 4.3rem;
+    width: 12.2rem;
+    margin-top: 4rem;
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    background-color: #1498BE,
 }
