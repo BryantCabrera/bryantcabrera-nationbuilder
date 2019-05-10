@@ -65,3 +65,10 @@
 }
 
 .settings__body__content__links__link:hover::after { transform: scaleX(1); }
+
+.settings__body__content__links__link:active {
+    display: block;
+    content: '';
+    padding-top: 2rem;
+    border-bottom: solid 3px #1498BE;
+}

@@ -61,3 +61,10 @@
 }
 
 .header__nav__link:hover::after { transform: scaleX(1); }
+
+.header__nav__link:active::after {
+    display: block;
+    content: '';
+    padding-top: 2rem;
+    border-bottom: solid 3px #1498BE;
+}

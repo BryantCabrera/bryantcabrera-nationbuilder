@@ -119,16 +119,16 @@ class Settings extends Component {
                     <div className="settings__body__content">
                         <Nav className="settings__body__content__links">
                                 {this.state.links.map((link, index) => (
-                                    <Link
+                                    <RouterLink
                                         to="#"
                                         title={link.title}
                                         className="settings__body__content__links__link"
-                                        activeClassName={link.status ? link.status : ""}
+                                        isActive={() => link.status ? true : false}
                                         activeStyle={{
                                             fontWeight: "bold",
                                             color: "#1498BE"
                                         }}
-                                    >{link.title}</Link>
+                                    >{link.title}</RouterLink>
                                 ))}
                             {/* <Link
                                 to="#"

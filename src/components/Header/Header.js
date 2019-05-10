@@ -27,7 +27,7 @@ class Header extends Component {
                         <RouterLink
                             exact to={link.path}
                             title={link.title}
-                            activeClassName={link.status ? link.status : ""}
+                            isActive={() => link.status ? true : false}
                             activeStyle={{
                                 fontWeight: "bold",
                                 color: "#1498BE"
