@@ -83,6 +83,7 @@ class Settings extends Component {
 
                 <div className="settings__body">
                     <Nav tabs className="settings__nav">
+                        {/* This item is throwing a warning in console, but I assume it is because of react-strap and bootstrap as I am not using the "color" property in JSX */}
                         <NavItem>
                             <NavLink href="#" className="settings__nav__item__link">Basics</NavLink>
                         </NavItem>
