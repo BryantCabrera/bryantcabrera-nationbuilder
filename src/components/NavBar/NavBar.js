@@ -29,7 +29,7 @@ class NavBar extends Component {
 
     render() {
         NavItem.propTypes = {
-            // pass in custom element to use
+            // can pass in custom element to use
             color: "white"
         }
 
