@@ -6,18 +6,30 @@ import './People.css';
 
 class People extends Component {
     state = {
+        name: '',
+        slug: '',
+        fieldType: '',
         selectedOption: null
+    }
+    handleInputChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
     }
 
     handleChange = (selectedOption) => {
         this.setState({ selectedOption });
+
+        this.setState({
+            fieldType: selectedOption.value
+        });
 
         console.log(`Option selected:`, selectedOption);
     }
 
     render() {
         const options = [
-            { value: 'test', label: 'Text' },
+            { value: 'text', label: 'Text' },
             { value: 'checkbox', label: 'Checkbox' },
             { value: 'multipleChoice', label: 'Multiple choice' }
         ];
@@ -78,6 +90,7 @@ class People extends Component {
                             name="name"
                             id="name"
                             className="people__form__input"
+                            onChange={this.handleInputChange}
                         />
                     </FormGroup>
                     <FormGroup>
@@ -88,6 +101,7 @@ class People extends Component {
                                 name="slug"
                                 id="slug"
                                 className="people__form__input"
+                                onChange={this.handleInputChange}
                             />
                             <h4 className="people__form__input--slug__warning">Choose carefully, for data integrity reasons, this cannot be changed later.</h4>
                         </div>
