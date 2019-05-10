@@ -17,7 +17,7 @@ class UITable extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    {/* <tr>
                         {this.props.tableData.data.map((data, index) => <td key={index}>{data.name}</td>)}
                     </tr>
                     <tr>
@@ -25,7 +25,15 @@ class UITable extends Component {
                     </tr>
                     <tr>
                         {this.props.tableData.data.map((data, index) => <td key={index}>{data.type}</td>)}
-                    </tr>
+                    </tr> */}
+
+                    {this.props.tableData.data.map((data, index) => (
+                        <tr key={index}>
+                            <td>{data.name}</td>
+                            <td>{data.slug}</td>
+                            <td>{data.fieldType}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </Table>
         )

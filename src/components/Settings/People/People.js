@@ -45,30 +45,38 @@ class People extends Component {
         console.log(`Option selected:`, selectedOption);
     }
 
-    handleSubmit = (data) => {
+    handleSubmit = () => {
+        const newData = {
+            name: this.state.name.value,
+            slug: this.state.slug.value,
+            fieldType: this.state.fieldType.value
+        }
+
         this.setState({
-            customFields: [...this.state.customFields, data]
+            customFields: [...this.state.customFields, newData]
         });
 
         this.reset()
     }
 
     reset = () => {
-        this.setState({
-            ...this.state,
-            name: {
-                value: '',
-                isValid: false
-            },
-            slug: {
-                value: '',
-                isValid: false
-            },
-            fieldType: {
-                value: '',
-                isValid: false
-            },
-            selectedOption: null
+        this.setState(prevState => {
+            return {
+                ...prevState,
+                name: {
+                    value: '',
+                    isValid: false
+                },
+                slug: {
+                    value: '',
+                    isValid: false
+                },
+                fieldType: {
+                    value: '',
+                    isValid: false
+                },
+                selectedOption: null
+            }
         });
     }
 
@@ -191,13 +199,7 @@ class People extends Component {
                     <Button
                         className="people__form__button"
                         color="info"
-                        onClick={() => this.handleSubmit(
-                            {
-                                name: this.state.name.value,
-                                slug: this.state.slug.value,
-                                fieldType: this.state.fieldType.value
-                            }
-                        )}
+                        onClick={this.handleSubmit}
                         disabled={!this.state.name.isValid || !this.state.slug.isValid || !this.state.fieldType.isValid}
                     >Create field</Button>
                 </Form>
